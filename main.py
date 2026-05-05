@@ -1,10 +1,20 @@
+import uvicorn;
+from fastapi import FastAPI;
+
 from dotenv import dotenv_values;
 
 config = dotenv_values(".env")
+app = FastAPI()
 
-def main():
-    print(f"uvicorn host: {config['UVICORN_HOST']} \nuvicorn port: {config['UVICORN_PORT']}")
-
+@app.get("/")
+async def read_root():
+    return {"message": "A unique response"}
 
 if __name__ == "__main__":
-    main()
+    uvicorn.run(
+        "main:app", 
+        host=config['HOST'], 
+        port=int(config['PORT']), 
+        reload=True
+    )
+    
