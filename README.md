@@ -6,9 +6,17 @@ It is a proof-of-concept to showcase that a Python server **does not need two is
 
 ## Setup & Installation
 
-### Local
+### Local Dev
 
 ```sh
 uv sync
 source .venv/bin/activate
+uv run main.py
+```
+
+### Docker Container
+
+```
+docker build . -t python-server-test
+docker images
 ```
