@@ -10,6 +10,7 @@ EXPOSE 8000
 CMD [ "/app/.venv/bin/uvicorn", "main:app", "--port", "8000", "--host", "0.0.0.0" ]
 
 # TODO: Remove virtual environment and install dependencies for container
+
 # ENV PATH=/"opt/deps/bin:$PATH"
 
 # RUN echo "/opt/deps/lib/python3.13/site-packages" \
