@@ -19,4 +19,5 @@ uv run main.py
 ```
 docker build . -t python-server-test
 docker images
+docker run -p 8000:8000 python-server-test
 ```
